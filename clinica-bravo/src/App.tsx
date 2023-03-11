@@ -36,7 +36,7 @@ function App() {
           poster: soul_path
         }
       ]})
-    }, 3000);
+    }, 500);
 
     return () => clearTimeout(timerId);
   })

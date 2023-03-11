@@ -1,21 +1,17 @@
-import Loading from "../utils/charging";
+import GenericList from "../utils/genericList";
 import { film } from "./films.model";
 import IndividualFilm from "./individualFilm";
-import css from './listFilms.module.css'
+import css from './listFilms.module.css' 
 
 export default function ListFilms(props: listFilmsProps){
-if(!props.films){
-    return <Loading />
-}else if(props.films.length === 0){
-    return <>No films to show</>
-}else{
-    return(
+return(
+    <GenericList list={props.films}>
         <div className={css.div}>
-            {props.films.map(film => <IndividualFilm film={film}  
-                                                     key = {film.id}   />)}
-        </div>
+            {props.films?.map(film => <IndividualFilm film={film}  
+                                                        key = {film.id}   />)}
+        </div> 
+    </GenericList>
     )
-}
  
 }
 interface listFilmsProps{

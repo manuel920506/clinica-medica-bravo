@@ -6,6 +6,7 @@ import moana_path from './photos/moana.jpg';
 import avatar_path from './photos/avatar.jpg';
 import soul_path from './photos/soul.jpg'; 
 import ListFilms from './films/listFilms';
+import Button from './utils/Button';
  
 function App() {
 
@@ -43,11 +44,15 @@ function App() {
  
   return (
     <> 
-    <h3>Films On The Billboard</h3>
-    <ListFilms films={films.onTheBillboard} />
+    <div className='container'>
+     <Button>My Button</Button>
+      <h3>Films On The Billboard</h3>
+      <ListFilms films={films.onTheBillboard} />
 
-    <h3>Upcoming film releases</h3>
-    <ListFilms films={films.upcomingFilmReleases} />
+      <h3>Upcoming film releases</h3>
+      <ListFilms films={films.upcomingFilmReleases} />
+    </div>
+
     </>
   );
 }
